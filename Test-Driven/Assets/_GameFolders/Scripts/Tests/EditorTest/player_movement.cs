@@ -9,19 +9,33 @@ namespace _GameFolders.Scripts.Tests.EditorTest
 {
     public class player_movement
     {
-        [Test]
-        public void move_10_unit_right()
+        private IPlayerController GetPlayer()
         {
-            //Arrange
             IPlayerController playerController = Substitute.For<IPlayerController>();
             GameObject gameObject = new GameObject();
             playerController.transform.Returns(gameObject.transform);
             playerController.InputReader = Substitute.For<IInputReader>();
+            return playerController;
+        }
+
+        private IMover GetMover(IPlayerController playerController)
+        {
             IMover mover = new PlayerMoveWithTranslate(playerController);
+            return mover;
+        }
+        
+        [Test]
+        [TestCase(1f)]
+        [TestCase(-1f)]
+        public void move_10_unit(float horizontalValue)
+        {
+            //Arrange
+            var playerController  = GetPlayer();
+            var mover = GetMover(playerController);
             Vector3 startPos = playerController.transform.position;
 
             //Act
-            playerController.InputReader.Horizontal.Returns(1f);
+            playerController.InputReader.Horizontal.Returns(horizontalValue);
             for (int i = 0; i < 10; i++)
             {
                 mover.Tick();
@@ -30,6 +44,7 @@ namespace _GameFolders.Scripts.Tests.EditorTest
 
             Debug.Log("Start Pos => " + startPos);
             Debug.Log("End Pos => " + playerController.transform.position);
+            
             //Assert
             Assert.AreNotEqual(startPos, playerController.transform.position);
         }
@@ -38,11 +53,8 @@ namespace _GameFolders.Scripts.Tests.EditorTest
         public void move_10_unit_right_end_pos_greater_than_start_pos()
         {
             //Arrange
-            IPlayerController playerController = Substitute.For<IPlayerController>();
-            GameObject gameObject = new GameObject();
-            playerController.transform.Returns(gameObject.transform);
-            playerController.InputReader = Substitute.For<IInputReader>();
-            IMover mover = new PlayerMoveWithTranslate(playerController);
+            var playerController  = GetPlayer();
+            var mover = GetMover(playerController);
             Vector3 startPos = playerController.transform.position;
 
             //Act
@@ -55,6 +67,7 @@ namespace _GameFolders.Scripts.Tests.EditorTest
 
             Debug.Log("Start Pos => " + startPos);
             Debug.Log("End Pos => " + playerController.transform.position);
+            
             //Assert
             Assert.Greater(playerController.transform.position.x, startPos.x);
         }

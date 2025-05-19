@@ -8,8 +8,8 @@ namespace _GameFolders.Scripts.Concretes.Movement
         private readonly IPlayerController _playerController;
         private readonly Transform _transform;
         
-        private float _moveSpeed = 1;
-        private float _horizontalInput = 1;
+        private float _moveSpeed = 1f;
+        private float _horizontalInput = 1f;
         
         public PlayerMoveWithTranslate(IPlayerController playerController)
         {
@@ -24,7 +24,7 @@ namespace _GameFolders.Scripts.Concretes.Movement
 
         public void FixedTick()
         {
-            _transform.Translate(Vector2.right * _horizontalInput);
+            _transform.Translate(Vector2.right * _horizontalInput * (_moveSpeed * Time.deltaTime));
         }
     }
 }

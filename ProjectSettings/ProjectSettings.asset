@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: bedd5e9ee6f9e1d4390ae565297c2c5c
+  productGUID: b8eca2b410590964bbd13e6acfdc154c
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Test-Driven
+  productName: Test Driven
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -305,6 +305,7 @@ PlayerSettings:
     iPhone: 1
     tvOS: 1
   m_BuildTargetGroupLightmapEncodingQuality: []
+  m_BuildTargetGroupHDRCubemapEncodingQuality: []
   m_BuildTargetGroupLightmapSettings: []
   m_BuildTargetGroupLoadStoreDebugModeSettings: []
   m_BuildTargetNormalMapEncoding: []
@@ -595,14 +596,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Test-Driven
+  metroPackageName: Test Driven
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Test-Driven
+  metroApplicationDescription: Test Driven
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -673,10 +674,10 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 889bbea0-ec23-4c0f-af81-b67813c698fd
+  cloudProjectId: 3ce49de5-1b88-4b4c-8eee-93e631626e22
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Test-Driven
+  projectName: Test Driven
   organizationId: muratkirdal0101
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
